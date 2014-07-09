@@ -22,7 +22,7 @@ void mutation_type( PosNode *L,int Area )
 		bp1_pos2=p->pos2;
                 if( (bp1_pos1&0x3f00000000) != (bp1_pos2&0x3f00000000) )
 		{
-			//printf("CTX\t%lld\tchr%lld\t%lld\tchr%lld\t%lld\n",(bp1_pos1&0xff0000000000)>>40,(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,(bp1_pos2&0x3f00000000)>>32,bp1_pos2&0x3fffffff);
+			printf("CTX\t%lld\t%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0xffffff0000000000)>>40,(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,(bp1_pos2&0x3f00000000)>>32,bp1_pos2&0x3fffffff);
 			p=p->next;
 		}
 		else
@@ -78,36 +78,36 @@ void print_type(int label,int *en_single,unsigned long long int bp1_pos1,unsigne
 {
         //(*en_single)=0;
         if((label&0xff)==105 || (label&0xff)==153){ (*en_single)=1;
-                printf( "TRS1\tchr%lld\t%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff,bp2_pos1&0x3fffffff,bp2_pos2&0x3fffffff);
+                printf( "TRS1\t%lld\t%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff,bp2_pos1&0x3fffffff,bp2_pos2&0x3fffffff);
         }
         if((label&0xff)==195 ){ (*en_single)=1;
-                	printf( "tandemCNV2\tchr%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
+                	printf( "tandemCNV2\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
         }
         if((label&0xff)==60 || (label&0xff)==202){ (*en_single)=1;
 		if(abs((bp1_pos1&0x3fffffff)-(bp1_pos2&0x3fffffff))<=30 )
-                	printf( "tandemCNV3\tchr%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp2_pos1&0x3fffffff,bp2_pos2&0x3fffffff);
-		else	printf( "tandemCNV3\tchr%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
+                	printf( "tandemCNV3\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp2_pos1&0x3fffffff,bp2_pos2&0x3fffffff);
+		else	printf( "tandemCNV3\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
         }
         if((label&0xff)==57 || (label&0xff)==201){ (*en_single)=1;
-                printf( "INV/TRS4\tchr%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
+                printf( "INV/TRS4\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
         }
         if((label&0xff)==193){ (*en_single)=1;
-                printf( "CNV2\tchr%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp2_pos1&0x3fffffff,bp2_pos2&0x3fffffff);
+                printf( "CNV2\t%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp2_pos1&0x3fffffff,bp2_pos2&0x3fffffff);
         }
         if( (label&0xff)==145 ){ (*en_single)=1;
-                printf( "CNV1\tchr%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp2_pos1&0x3fffffff,bp2_pos2&0x3fffffff);
+                printf( "CNV1\t%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp2_pos1&0x3fffffff,bp2_pos2&0x3fffffff);
         }
 	if((label&0xff)==104 || (label&0xff)==152){ (*en_single)=1;
-                printf( "CNV3\tchr%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff,bp2_pos2&0x3fffffff);
+                printf( "CNV3\t%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff,bp2_pos2&0x3fffffff);
 	}
 	if((label&0xff)==200){ (*en_single)=1;
-                printf( "CNV4\tchr%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff,bp2_pos2&0x3fffffff);
+                printf( "CNV4\t%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff,bp2_pos2&0x3fffffff);
 	}
         if((label&0xff)==120  || (label&0xff)==65 || (label&0xff)==56  || (label&0xff)==241 ){ (*en_single)=1;
-                printf( "TRS2\tchr%lld\t%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff,bp2_pos1&0x3fffffff,bp2_pos2&0x3fffffff);
+                printf( "TRS2\t%lld\t%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff,bp2_pos1&0x3fffffff,bp2_pos2&0x3fffffff);
         }
         if( (label&0xff)==136 || (label&0xff)==216 || (label&0xff)==17 || (label&0xff)==177 ){ (*en_single)=1;
-                printf( "TRS3\tchr%lld\t%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff,bp2_pos1&0x3fffffff,bp2_pos2&0x3fffffff);
+                printf( "TRS3\t%lld\t%lld\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff,bp2_pos1&0x3fffffff,bp2_pos2&0x3fffffff);
         }
 }
 
@@ -118,16 +118,16 @@ void print_single_type(int en_single,unsigned long long int bp1_pos1,unsigned lo
                 if((bp1_pos2&0xc000000000)==(bp1_pos1&0xc000000000) )
                 {
                         if((bp1_pos1&0xc000000000)==0x4000000000)
-                                printf( "TRSdl\tchr%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
+                                printf( "TRSdl\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
                         else
-                                printf( "TRSdR\tchr%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
+                                printf( "TRSdR\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
                 }
                 else
                 {
                         if((bp1_pos1&0xc000000000)==0x4000000000)
-                                printf( "tandemCNV1\tchr%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
+                                printf( "tandemCNV1\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
                         else
-                                printf( "DEL\tchr%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
+                                printf( "DEL\t%lld\t%lld\t%lld\n",(bp1_pos1&0x3f00000000)>>32,bp1_pos1&0x3fffffff,bp1_pos2&0x3fffffff);
                 }
         }
 }

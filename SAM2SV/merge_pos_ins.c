@@ -20,7 +20,7 @@ void filer_L_ins( struct PosNode **L , int Area)
 		p_pos1=p->pos1;
 		while( q->next && (((q->next->pos1)&0xffffffffff) - (p_pos1&0xffffffffff) <=Area)  )
 		{
-			if( ((q->pos1)&0xff0000000000) > ((q->next->pos1)&0xff0000000000) )
+			if( ((q->pos1)&0xffffff0000000000) > ((q->next->pos1)&0xffffff0000000000) )
 			{
 				r=q->next;
 				if(r->next!=NULL)
@@ -60,7 +60,7 @@ void mutation_type_ins( PosNode *L ,int Area)
         {
                 while(NULL != p)
                 {
-                        printf( "INS\tchr%lld\t%lld\t%lld\n",((p->pos1)&0x3f00000000)>>32, (p->pos1)&0x3fffffff,(p->pos1)&0x3fffffff);
+                        printf( "INS\t%lld\t%lld\t%lld\n",((p->pos1)&0x3f00000000)>>32, (p->pos1)&0x3fffffff,(p->pos1)&0x3fffffff);
                         p = p->next;
                 }
                 printf("\n");

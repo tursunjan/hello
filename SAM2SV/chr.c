@@ -9,19 +9,23 @@ int chr2num (char chr[20])
 {
 	int num;
 	int c=strlen(chr);
-	if(c==4)
+	if(c==1)
 	{
-		switch( chr[3] )
+		switch( chr[0] )
 		{
-			case 'M' :  num=23; break;
+//			case 'M' :  num=23; break;
 			case 'X' :  num=24; break;
 			case 'Y' :  num=25; break;
-			default  :  num=chr[3]-48; break;
+			default  :  num=chr[0]-48; break;
 		}		
 	}
-	else if(c==5)
+	else if(c==2)
 	{
-		num = (chr[3]-48)*10 + chr[4]-48;
+		switch( chr[0] )
+		{
+			case 'M' :  num=23; break;
+			default  :  num = (chr[0]-48)*10 + chr[1]-48;
+		}
 	}
 	else num =0;
 	return num;

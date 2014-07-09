@@ -14,7 +14,7 @@ unsigned long long int ht_reg;
 unsigned long long int chr_reg;
 */
 struct strce{
-	char cigar[100];
+	char cigar[200];
 	int flag; 
 	unsigned long long int pos;
 	int  sw_score;
@@ -41,7 +41,7 @@ typedef struct PosNode{
 }PosNode;
 
 struct sam{
-        char cigar[100];
+        char cigar[200];
 	int flag; 
         unsigned long int pos1;
 	unsigned long long int chr;

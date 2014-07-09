@@ -31,6 +31,7 @@ int usage(is_long_help)
 
 int  main(int argc, char *argv[])
 {
+	int read_en;
 	int c;
 	int Area=30;
 	int Support=2;
@@ -57,8 +58,9 @@ int  main(int argc, char *argv[])
 		return usage(is_long_help);
 	FILE *fp;
 	fp=fopen( argv[optind],"r");
-	fscanf(fp,"%*[^\n]\n");
-	fscanf(fp,"%*[^\n]\n");
+	for(read_en=0;read_en<86;read_en++)
+		fscanf(fp,"%*[^\n]\n");
+	
 	struct PosNode *L;
 	L =(struct PosNode *)malloc( sizeof(struct PosNode) );
 	L->pos1=0;
