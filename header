@@ -1,0 +1,46 @@
+@RELATION cas.data
+
+@ATTRIBUTE GC NUMERIC
+@ATTRIBUTE Cov_N real
+@ATTRIBUTE Ref_num_N real
+@ATTRIBUTE Am_ref_base_N real
+@ATTRIBUTE Am_ref_map_N real
+@ATTRIBUTE Sp_ref_sp_N real
+@ATTRIBUTE Noref_num_N real
+@ATTRIBUTE Noref_rate_N NUMERIC
+@ATTRIBUTE Am_nonref_base_N real
+@ATTRIBUTE Am_nonref_map_N real
+@ATTRIBUTE Sp_nonref_num_N real
+@ATTRIBUTE Cns_qual_N real
+@ATTRIBUTE Snp_qual_N real
+@ATTRIBUTE Rms_qual_N real
+@ATTRIBUTE Bin1_N NUMERIC
+@ATTRIBUTE Bin2_N NUMERIC
+@ATTRIBUTE Ref_pos_num_N real
+@ATTRIBUTE Ref_neg_num_N real
+@ATTRIBUTE Noref_pos_num_N real
+@ATTRIBUTE Noref_neg_num_N real
+@ATTRIBUTE Cov_T real
+@ATTRIBUTE Ref_num_T real
+@ATTRIBUTE Am_ref_base_T real
+@ATTRIBUTE Am_ref_map_T real
+@ATTRIBUTE Sp_ref_sp_T real
+@ATTRIBUTE Noref_num_T real
+@ATTRIBUTE Am_nonref_base_T real
+@ATTRIBUTE Am_nonref_map_T real
+@ATTRIBUTE Sp_nonref_num_T real
+@ATTRIBUTE Cns_qual_T real
+@ATTRIBUTE Snp_qual_T real
+@ATTRIBUTE Rms_qual_T real
+@ATTRIBUTE Bin1_T NUMERIC
+@ATTRIBUTE Bin2_T NUMERIC
+@ATTRIBUTE Ref_pos_num_T real
+@ATTRIBUTE Ref_neg_num_T real
+@ATTRIBUTE Noref_pos_num_T real
+@ATTRIBUTE Noref_neg_num_T real
+@ATTRIBUTE Score real
+@ATTRIBUTE Sniper_S real
+@ATTRIBUTE Fisher NUMERIC
+@ATTRIBUTE KEEP_REJECT {KEEP,REJECT}
+
+@DATA
